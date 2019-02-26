@@ -1,5 +1,5 @@
 # ProgjarEF
-Repo Pemrograman Jaringan E/F
+Repo Pemrograman Jaringan F
 
 Mujahid Khairuddin
 05111640000169
