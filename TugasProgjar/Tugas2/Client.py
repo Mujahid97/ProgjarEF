@@ -1,24 +1,25 @@
 import socket
+import threading
+import time
+import datetime
 
 UDP_IP = 'localhost'
 UDP_PORT = 9000
 BUFFER_SIZE = 1024
+num = int
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect((UDP_IP, UDP_PORT))
-with open('received_file.jpeg', 'wb') as f:
+waktu = datetime.datetime.now()
+with open(format(waktu) +'received_file.jpeg', 'wb') as f:
     print 'file opened'
     while True:
-        #print('receiving data...')
         data = s.recv(BUFFER_SIZE)
-        print('data=%s', (data))
         if not data:
             f.close()
-            print 'file close()'
+            print 'file closed'
             break
-        # write data to a file
         f.write(data)
 
-print('Successfully get the file')
+print('Berhasil mengambil gambar')
 s.close()
-print('connection closed')
