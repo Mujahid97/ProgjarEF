@@ -1,12 +1,12 @@
 import socket
 
-TCP_IP = 'localhost'
-TCP_PORT = 9001
+UDP_IP = 'localhost'
+UDP_PORT = 9000
 BUFFER_SIZE = 1024
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect((TCP_IP, TCP_PORT))
-with open('received_file', 'wb') as f:
+s.connect((UDP_IP, UDP_PORT))
+with open('received_file.jpeg', 'wb') as f:
     print 'file opened'
     while True:
         #print('receiving data...')
